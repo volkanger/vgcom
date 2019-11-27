@@ -6,8 +6,8 @@ module.exports = [
     component: path.resolve(`src/pages/index.js`)
   },
   {
-    path: '/blog',
-    component: path.resolve(`src/containers/blog.js`)
+    path: '/home',
+    component: path.resolve(`src/pages/index.js`)
   },
   {
     path: '/404/',

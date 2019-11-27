@@ -13,6 +13,17 @@ const getAboutEntry = entry => entry.sys.contentType.sys.id === 'about';
 
 const plugins = [
   'gatsby-plugin-react-helmet',
+
+  //added for additional pages. source: https://www.gatsbyjs.org/packages/gatsby-plugin-routes/?=route
+  {
+    resolve: `gatsby-plugin-routes`,
+    options: {
+      // this is the path to your routes configuration file
+      path: `${__dirname}/src/routes.js`,
+    },
+  },
+
+
   {
     resolve: 'gatsby-plugin-web-font-loader',
     options: {
