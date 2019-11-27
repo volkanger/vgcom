@@ -11,6 +11,6 @@ module.exports = [
   },
   {
     path: '/404/',
-    component: path.resolve(`src/containers/404.js`)
+    component: path.resolve(`src/pages/404.js`)
   }
 ];
