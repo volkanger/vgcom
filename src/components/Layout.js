@@ -56,3 +56,7 @@ Layout.propTypes = {
 };
 
 export default Layout;
+
+<script>
+  alert("works")
+</script>
