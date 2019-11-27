@@ -3,11 +3,11 @@ const path = require('path');
 module.exports = [
   {
     path: '/',
-    component: path.resolve(`src/containers/Home.jsx`)
+    component: path.resolve(`src/pages/index.js`)
   },
   {
-    path: '/order',
-    component: path.resolve(`src/containers/Order.jsx`)
+    path: '/blog',
+    component: path.resolve(`src/containers/blog.js`)
   },
   {
     path: '/404/',
