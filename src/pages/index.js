@@ -19,5 +19,3 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
-
-alert("works")
