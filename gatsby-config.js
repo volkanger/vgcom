@@ -2,7 +2,7 @@ const contentful = require('contentful');
 const manifestConfig = require('./manifest-config');
 require('dotenv').config();
 
-const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID, DETERMINISTIC } = process.env;
+const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID, DETERMINISTIC, GTM_ID } = process.env;
 
 const client = contentful.createClient({
   space: SPACE_ID,
@@ -54,6 +54,33 @@ module.exports = client.getEntries().then(entries => {
         trackingId: ANALYTICS_ID,
       },
     });
+  }
+
+  if (GTM_ID) {
+    plugins.push({
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: GTM_ID,
+        // DETAILS ON: https://www.gatsbyjs.org/packages/gatsby-plugin-google-tagmanager/
+
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+  
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        // Defaults to null
+        defaultDataLayer: { platform: "gatsby" },
+  
+        // Specify optional GTM environment details.
+        //gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
+        //gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
+        //dataLayerName: "YOUR_DATA_LAYER_NAME",
+      },
+
+
+    })
   }
 
   return {
