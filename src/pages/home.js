@@ -10,14 +10,7 @@ import Footer from '../components/Footer';
 const HomePage = () => (
   <Layout>
     <Header />
-    <Landing />
     <About />
-    <Landing />
-    <Landing />
-    <Landing />
-    <Projects />
-    <Writing />
-    <Landing />
     <Footer />
   </Layout>
 );
